@@ -6,8 +6,15 @@ let exactTime=times[0] + ':' + times[1] +" "+ampm;
 let timeEl = document.querySelector("#time")
 timeEl.textContent = exactTime;
 }
-
 setInterval(timee, 1000);
+
+function timeChange()  {
+    const d = new Date();
+    let minutes = d.getHours() + ":" + d.getMinutes()
+
+    let timeEl = document.querySelector("#time")
+    timeEl.textContent = minutes;
+  }
 
 window.onload = function () {
     let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];;
