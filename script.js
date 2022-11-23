@@ -30,3 +30,11 @@ function light() {
     sub1El.classList.remove("dark")
     sub2El.classList.remove("dark")
 }
+function auto() {
+    let myDate = new Date();
+    let hrs = myDate.getHours();
+    if (hrs >= 6 && hrs < 18)
+        light()
+    else if (hrs >= 17 && hrs <= 24)
+        dark()
+}
