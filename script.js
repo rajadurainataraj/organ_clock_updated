@@ -1,16 +1,18 @@
-let currentTime = new Date().toLocaleTimeString();
-//time
-let timeEl = document.querySelector("#time")
-timeEl.textContent = currentTime;
+const dates = new Date();
+const times = dates.toLocaleTimeString().split(' ')[0].split(':') ;
+let ampm = times[0] >= 12 ? 'PM' : 'AM';
+let exactTime=times[0] + ':' + times[1] +" "+ampm;
 
+let timeEl = document.querySelector("#time")
+timeEl.textContent = exactTime;
 
 window.onload = function () {
     let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];;
-    // let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     let date = new Date();
     let dateEl = document.querySelector("#date")
 
-    dateEl.textContent = months[date.getMonth()] + ' ' + new Date().getDate() + ", " + new Date().getFullYear();
+    dateEl.textContent = days[date.getDay()]  + ' ' + months[date.getMonth()]  + ' ' + new Date().getDate() + ", " + new Date().getFullYear();
     console.log(dateEl.textContent)
 };
 let element = document.body;
