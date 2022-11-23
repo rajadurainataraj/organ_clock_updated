@@ -1,10 +1,13 @@
+function timee(){
 const dates = new Date();
 const times = dates.toLocaleTimeString().split(' ')[0].split(':') ;
 let ampm = times[0] >= 12 ? 'PM' : 'AM';
 let exactTime=times[0] + ':' + times[1] +" "+ampm;
-
 let timeEl = document.querySelector("#time")
 timeEl.textContent = exactTime;
+}
+
+setInterval(timee, 1000);
 
 window.onload = function () {
     let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];;
