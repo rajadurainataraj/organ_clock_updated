@@ -8,6 +8,8 @@ timeEl.textContent = exactTime;
 }
 setInterval(timee, 1000);
 
+let timeEl = document.querySelector("#time")
+timeEl.onmouseover = function() {timeChange()};
 function timeChange()  {
     const d = new Date();
     let minutes = d.getHours() + ":" + d.getMinutes()
